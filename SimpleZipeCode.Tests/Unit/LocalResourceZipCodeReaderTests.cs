@@ -1,12 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Should;
 using SimpleZipCode;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleZipeCode.Tests.Unit
 {

@@ -8,13 +8,13 @@ namespace SimpleZipeCode.Tests.Integration
     [TestFixture]
     public class ZipCodeSourceTests
     {
-        private readonly ZipCodeSource _zipCodes = new ZipCodeSource();
+        private readonly ZipCodeSource _zipCodeSource = new ZipCodeSource();
         private IZipCodeRepo _zipCodeRepo;
 
         [SetUp]
         public void Setup()
         {
-            _zipCodeRepo = _zipCodes.FromMemory().GetRepo();
+            _zipCodeRepo = _zipCodeSource.FromMemory().GetRepo();
         }
 
         [Test]

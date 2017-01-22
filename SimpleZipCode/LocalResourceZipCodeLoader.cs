@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace SimpleZipCode
 {
-    public sealed class LocalResourceZipCodeReader
+    public sealed class LocalResourceZipCodeLoader
     {
         private readonly string _localResource;
         private readonly bool _header;
 
-        public LocalResourceZipCodeReader(string localResource, bool header = true)
+        public LocalResourceZipCodeLoader(string localResource, bool header = true)
         {
             _localResource = localResource;
             _header = header;
@@ -29,16 +29,15 @@ namespace SimpleZipCode
                 .Where(x => !string.IsNullOrWhiteSpace(x[0]))
                 .Select(x =>
                 {
-                    return new ZipCode
-                    {
-                        PostalCode = x[0].Trim(),
-                        PlaceName = x[1],
-                        State = x[2],
-                        StateAbbreviation = x[3],
-                        County = x[4],
-                        Latitude = double.Parse(x[5]),
-                        Longitude = double.Parse(x[6])
-                    };
+                    var postalCode = x[0].Trim();
+                    var placeName = x[1];
+                    var state = x[2];
+                    var stateAbbreviation = x[3];
+                    var county = x[4];
+                    var latitude = double.Parse(x[5]);
+                    var longitude = double.Parse(x[6]);
+
+                    return new ZipCode(postalCode, placeName, state, stateAbbreviation, county, latitude, longitude);
                 }).ToList();
         }
     }

@@ -56,8 +56,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Unit\LocalResourceZipCodeReaderTests.cs" />
-    <Compile Include="Integration\ZipCodesTests.cs" />
+    <Compile Include="Integration\ZipCodeSourceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\ZipCodeRepoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

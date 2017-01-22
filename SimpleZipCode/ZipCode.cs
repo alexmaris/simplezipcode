@@ -1,19 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleZipCode
+﻿namespace SimpleZipCode
 {
     public class ZipCode
     {
-        public string PostalCode { get; protected internal set; }
-        public string PlaceName { get; protected internal set; }
-        public string State { get; protected internal set; }
-        public string StateAbbreviation { get; protected internal set; }
-        public string County { get; protected internal set; }
-        public double Latitude { get; protected internal set; }
-        public double Longitude { get; protected internal set; }
+        public string PostalCode { get; private set; }
+        public string PlaceName { get; private set; }
+        public string State { get; private set; }
+        public string StateAbbreviation { get; private set; }
+        public string County { get; private set; }
+        public double Latitude { get; private set; }
+        public double Longitude { get; private set; }
+
+        public ZipCode(
+            string postalCode, 
+            string placeName, 
+            string state, 
+            string stateAbbreviation, 
+            string county, 
+            double latitude, 
+            double longitude)
+        {
+            PostalCode = postalCode;
+            PlaceName = placeName;
+            State = state;
+            StateAbbreviation = stateAbbreviation;
+            County = county;
+            Latitude = latitude;
+            Longitude = longitude;
+        }
     }
 }
