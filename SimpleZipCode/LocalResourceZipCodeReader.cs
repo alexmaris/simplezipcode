@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SimpleZipCode
 {
-    public class LocalResourceZipCodeReader
+    public sealed class LocalResourceZipCodeReader
     {
         private readonly string _localResource;
         private readonly bool _header;

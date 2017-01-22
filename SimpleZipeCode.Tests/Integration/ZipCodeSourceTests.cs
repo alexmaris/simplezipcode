@@ -6,15 +6,15 @@ using System.Linq;
 namespace SimpleZipeCode.Tests.Integration
 {
     [TestFixture]
-    public class ZipCodesTests
+    public class ZipCodeSourceTests
     {
-        private readonly ZipCodes _zipCodes = new ZipCodes();
+        private readonly ZipCodeSource _zipCodes = new ZipCodeSource();
         private IZipCodeRepo _zipCodeRepo;
 
         [SetUp]
         public void Setup()
         {
-            _zipCodeRepo = _zipCodes.InMemory.GetRepo();
+            _zipCodeRepo = _zipCodes.FromMemory().GetRepo();
         }
 
         [Test]

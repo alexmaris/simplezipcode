@@ -4,31 +4,28 @@ using System.Collections.Generic;
 
 namespace SimpleZipCode
 {
-    public class ZipCodes
+    public class ZipCodeSource
     {
         private LocalResourceZipCodeReader _localResourceZipCodeReader;
 
         private List<Func<IZipCodeRepo, IZipCodeRepo>> _steps =
             new List<Func<IZipCodeRepo, IZipCodeRepo>>();
 
-        public ZipCodes()
+        public ZipCodeSource()
         {
             _localResourceZipCodeReader =
                 new LocalResourceZipCodeReader(Resources.us_postal_codes);
         }
 
-        public ZipCodes InMemory
+        public ZipCodeSource FromMemory()
         {
-            get
+            _steps.Add((zipcodeRepo) =>
             {
-                _steps.Add((zipcodeRepo) =>
-                {
-                    zipcodeRepo = new LocalZipCodeRepo(_localResourceZipCodeReader.LoadZipCodes()                        );
-                    return zipcodeRepo;
-                });
+                zipcodeRepo = new ZipCodeRepo(_localResourceZipCodeReader.LoadZipCodes());
+                return zipcodeRepo;
+            });
 
-                return this;
-            }
+            return this;
         }
 
         public IZipCodeRepo GetRepo()

@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 
 namespace SimpleZipCode
 {
-    public class LocalZipCodeRepo : IZipCodeRepo
+    public class ZipCodeRepo : IZipCodeRepo
     {
         private readonly List<ZipCode> _zipCodes;
 
-        public LocalZipCodeRepo(List<ZipCode> zipCodes)
+        public ZipCodeRepo(List<ZipCode> zipCodes)
         {
             _zipCodes = zipCodes;
         }
