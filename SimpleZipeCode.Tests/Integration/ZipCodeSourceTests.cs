@@ -9,12 +9,12 @@ namespace SimpleZipeCode.Tests.Integration
     public class ZipCodeSourceTests
     {
         private readonly ZipCodeSource _zipCodeSource = new ZipCodeSource();
-        private IZipCodeRepo _zipCodeRepo;
+        private IZipCodeRepository _zipCodeRepo;
 
         [SetUp]
         public void Setup()
         {
-            _zipCodeRepo = _zipCodeSource.FromMemory().GetRepo();
+            _zipCodeRepo = _zipCodeSource.FromMemory().GetRepository();
         }
 
         [Test]

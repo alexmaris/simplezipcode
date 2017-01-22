@@ -1,36 +1,29 @@
-﻿using SimpleZipCode.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SimpleZipCode
 {
     public class ZipCodeSource
     {
-        private LocalResourceZipCodeReader _localResourceZipCodeReader;
+        private List<Func<IZipCodeRepository, IZipCodeRepository>> _steps =
+            new List<Func<IZipCodeRepository, IZipCodeRepository>>();
 
-        private List<Func<IZipCodeRepo, IZipCodeRepo>> _steps =
-            new List<Func<IZipCodeRepo, IZipCodeRepo>>();
-
-        public ZipCodeSource()
-        {
-            _localResourceZipCodeReader =
-                new LocalResourceZipCodeReader(Resources.us_postal_codes);
-        }
+        public ZipCodeSource() { }
 
         public ZipCodeSource FromMemory()
         {
             _steps.Add((zipcodeRepo) =>
             {
-                zipcodeRepo = new ZipCodeRepo(_localResourceZipCodeReader.LoadZipCodes());
+                zipcodeRepo = new ZipCodeRepo(LocalResourceZipCodeLoader.Instance().LoadZipCodes());
                 return zipcodeRepo;
             });
 
             return this;
         }
 
-        public IZipCodeRepo GetRepo()
+        public IZipCodeRepository GetRepository()
         {
-            IZipCodeRepo repo = null;
+            IZipCodeRepository repo = null;
 
             foreach (var step in _steps)
             {

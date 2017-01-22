@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace SimpleZipCode
 {
-    public class ZipCodeRepo : IZipCodeRepo
+    public class ZipCodeRepo : IZipCodeRepository
     {
         private readonly List<ZipCode> _zipCodes;
 

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace SimpleZipCode
 {
-    public interface IZipCodeRepo
+    public interface IZipCodeRepository
     {
         /// <summary>
         /// Search the repo for ZipCode(s) that match the specified predicate

@@ -9,18 +9,18 @@ namespace SimpleZipeCode.Tests.Unit
     [TestFixture]
     public class LocalResourceZipCodeReaderTests
     {
-        private readonly string _localResourceCsv = @"Postal Code,Place Name,State,State Abbreviation,County,Latitude,Longitude,
+        private static readonly string _localResourceCsv = @"Postal Code,Place Name,State,State Abbreviation,County,Latitude,Longitude,
                                                      12345,Springfield,TV Land,ZZ,Cook,41.8868,-87.6386,
                                                      ,,,,,,,
                                                      
                                                      ,No Postal Code,TV Land,ZZ,Cook,41.8864,-87.6382,";
 
-        private LocalResourceZipCodeReader _localResourceZipCodeReader;
+        private LocalResourceZipCodeLoader _localResourceZipCodeReader;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
-            _localResourceZipCodeReader = new LocalResourceZipCodeReader(_localResourceCsv, header: true);
+            _localResourceZipCodeReader = new LocalResourceZipCodeLoader(_localResourceCsv, true);
         }
 
         [Test]

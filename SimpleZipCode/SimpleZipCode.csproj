@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IZipCodeRepo.cs" />
-    <Compile Include="LocalResourceZipCodeReader.cs" />
+    <Compile Include="IZipCodeRepository.cs" />
+    <Compile Include="LocalResourceZipCodeLoader.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

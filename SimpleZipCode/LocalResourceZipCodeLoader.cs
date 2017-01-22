@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleZipCode.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,8 @@ namespace SimpleZipCode
 {
     public sealed class LocalResourceZipCodeLoader
     {
+        private static volatile LocalResourceZipCodeLoader singleton;
+        private static object syncRoot = new object();
         private readonly string _localResource;
         private readonly bool _header;
 
@@ -39,6 +42,23 @@ namespace SimpleZipCode
 
                     return new ZipCode(postalCode, placeName, state, stateAbbreviation, county, latitude, longitude);
                 }).ToList();
+        }
+
+        public static LocalResourceZipCodeLoader Instance(string localResource = null, bool header = true)
+        {
+            if (singleton == null)
+            {
+                lock (syncRoot)
+                {
+                    if (singleton == null)
+                    {
+                        localResource = localResource != null ? localResource : Resources.us_postal_codes;
+                        singleton = new LocalResourceZipCodeLoader(localResource, header);
+                    }
+                }
+            }
+
+            return singleton;
         }
     }
 }
