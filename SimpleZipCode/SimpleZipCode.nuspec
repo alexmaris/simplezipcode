@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>alexm</authors>
+    <owners>alexm</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple US Zip Code collection for .NET with a light in memory zip code data store.</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>ZipCode US zip code search radius</tags>
+  </metadata>
+</package>
