@@ -8,7 +8,6 @@ namespace SimpleZipeCode.Tests.Integration
     [TestFixture]
     public class ZipCodeSourceTests
     {
-        private readonly ZipCodeSource _zipCodeSource;
         private IZipCodeRepository _zipCodeRepo;
 
         [SetUp]
