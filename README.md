@@ -5,9 +5,7 @@ To get started use the instance API:
 
 ```csharp
 // This is the zip code repo builder, you'll need only one instance per app
-var source = new ZipCodeSource();
-
-var zipCodes = source.FromMemory().GetRepository();
+var zipCodes = ZipCodeSource.FromMemory().GetRepository();
 
 var chicagoMagnificientMileZipCode = zipCodes.Get("60611");
 ```
