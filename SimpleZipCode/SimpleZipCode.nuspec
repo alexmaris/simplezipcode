@@ -6,6 +6,7 @@
     <title>$title$</title>
     <authors>alexm</authors>
     <owners>alexm</owners>
+    <projectUrl>https://github.com/alexmaris/simplezipcode</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple US Zip Code collection for .NET with a light in memory zip code data store.</description>
     <copyright>Copyright 2017</copyright>
