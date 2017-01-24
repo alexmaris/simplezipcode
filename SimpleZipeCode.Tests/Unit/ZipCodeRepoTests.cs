@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Should;
 using SimpleZipCode;
+using SimpleZipCode.Repos;
 using System.Collections.Generic;
 using System.Linq;
 

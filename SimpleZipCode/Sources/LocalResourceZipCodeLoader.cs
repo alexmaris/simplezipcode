@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleZipCode
+namespace SimpleZipCode.Sources
 {
     public sealed class LocalResourceZipCodeLoader
     {

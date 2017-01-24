@@ -41,13 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IZipCodeRepository.cs" />
-    <Compile Include="LocalResourceZipCodeLoader.cs" />
+    <Compile Include="Sources\LocalResourceZipCodeLoader.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ZipCodeRepo.cs" />
+    <Compile Include="Repos\ZipCodeRepo.cs" />
     <Compile Include="ZipCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZipCodeSource.cs" />

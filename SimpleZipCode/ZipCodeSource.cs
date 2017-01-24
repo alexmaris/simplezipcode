@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SimpleZipCode.Repos;
+using SimpleZipCode.Sources;
+using System;
 using System.Collections.Generic;
 
 namespace SimpleZipCode
@@ -9,16 +11,9 @@ namespace SimpleZipCode
             new List<Func<IZipCodeRepository, IZipCodeRepository>>();
 
         public ZipCodeSource() { }
-
-        public ZipCodeSource FromMemory()
+        public ZipCodeSource(Func<IZipCodeRepository, IZipCodeRepository> step)
         {
-            _steps.Add((zipcodeRepo) =>
-            {
-                zipcodeRepo = new ZipCodeRepo(LocalResourceZipCodeLoader.Instance().LoadZipCodes());
-                return zipcodeRepo;
-            });
-
-            return this;
+            _steps.Add(step);
         }
 
         public IZipCodeRepository GetRepository()
@@ -31,6 +26,15 @@ namespace SimpleZipCode
             }
 
             return repo;
+        }
+
+        public static ZipCodeSource FromMemory()
+        {
+            return new ZipCodeSource((zipcodeRepo) =>
+            {
+                zipcodeRepo = new ZipCodeRepo(LocalResourceZipCodeLoader.Instance().LoadZipCodes());
+                return zipcodeRepo;
+            });
         }
     }
 }
