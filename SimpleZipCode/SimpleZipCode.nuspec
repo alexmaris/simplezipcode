@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
+    <id>SimpleZipCode</id>
+    <version>1.0.3</version>
+    <title>SimpleZipCode</title>
     <authors>alexm</authors>
     <owners>alexm</owners>
     <projectUrl>https://github.com/alexmaris/simplezipcode</projectUrl>
@@ -12,4 +12,10 @@
     <copyright>Copyright 2017</copyright>
     <tags>ZipCode US zip code search radius</tags>
   </metadata>
+  <files>
+    <file src="bin\Release-Net452\SimpleZipCode.dll" target="lib\net452\SimpleZipCode.dll" />
+    <file src="bin\Release-Net452\SimpleZipCode.pdb" target="lib\net452\SimpleZipCode.pdb" />
+    <file src="bin\Release-Net45\SimpleZipCode.dll" target="lib\net45\SimpleZipCode.dll" />
+    <file src="bin\Release-Net45\SimpleZipCode.pdb" target="lib\net45\SimpleZipCode.pdb" />
+  </files>
 </package>
