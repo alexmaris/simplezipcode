@@ -30,9 +30,9 @@ namespace SimpleZipCode
 
         public static ZipCodeSource FromMemory()
         {
-            return new ZipCodeSource((zipcodeRepo) =>
+            return new ZipCodeSource(z =>
             {
-                zipcodeRepo = new ZipCodeRepo(LocalResourceZipCodeLoader.Instance().LoadZipCodes());
+                var zipcodeRepo = new ZipCodeRepo(LocalResourceZipCodeLoader.Instance().LoadZipCodes());
                 return zipcodeRepo;
             });
         }
