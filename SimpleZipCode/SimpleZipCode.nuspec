@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SimpleZipCode</id>
-    <version>1.0.3</version>
+    <version>$version$</version>
     <title>SimpleZipCode</title>
     <authors>alexm</authors>
     <owners>alexm</owners>

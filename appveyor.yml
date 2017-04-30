@@ -4,7 +4,9 @@ branches:
     - master
     - dev
 
-configuration: Debug
+configuration: 
+  - Debug
+  - Release-Net45
 
 before_build:
   - nuget restore 
@@ -15,3 +17,7 @@ build:
 test:
   assemblies:
       - '**\*.Test.dll'
+
+environment:
+  nuget_key:
+    secure: X73bZ5OhebHVJuPjUFLwmK0K3xAlTntFhW9uKGA66KKhAkBZRPm/atUUtsu04HD7
