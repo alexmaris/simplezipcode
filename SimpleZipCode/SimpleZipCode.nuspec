@@ -13,9 +13,7 @@
     <tags>ZipCode US zip code search radius</tags>
   </metadata>
   <files>
-    <file src="bin\Release-Net452\SimpleZipCode.dll" target="lib\net452\SimpleZipCode.dll" />
-    <file src="bin\Release-Net452\SimpleZipCode.pdb" target="lib\net452\SimpleZipCode.pdb" />
-    <file src="bin\Release-Net45\SimpleZipCode.dll" target="lib\net45\SimpleZipCode.dll" />
-    <file src="bin\Release-Net45\SimpleZipCode.pdb" target="lib\net45\SimpleZipCode.pdb" />
+    <file src="bin\Release\SimpleZipCode.dll" target="lib\net461\SimpleZipCode.dll" />
+    <file src="bin\Release\SimpleZipCode.pdb" target="lib\net461\SimpleZipCode.pdb" />
   </files>
 </package>
