@@ -4,7 +4,6 @@ branches:
     - master
 
 configuration: 
-  - Debug
   - Release-Net45
 
 before_build:
@@ -12,6 +11,10 @@ before_build:
 
 build:
   verbosity: minimal
+
+# scripts to run after build
+after_build:
+  - nuget pack .\SimpleZipCode\SimpleZipCode.csproj -properties Configuration=Release-Net45
 
 test:
   assemblies:
